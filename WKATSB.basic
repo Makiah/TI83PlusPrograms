@@ -1,0 +1,205 @@
+Disp “TITRATE WK A/B”
+Disp “PRS 0 FOR WK A”
+Disp “PRS 1 FOR WK B”
+Input “CHOICE=”,A
+ 
+If A=0
+Then
+Disp “WK ACID TITRATED”
+Disp “W/ STR BASE”
+Input “KA=”,B
+Input “M ACID=”,C
+ 
+Disp “INIT PH OF SYS”
+Disp “DO ICE TABLE”
+Disp “DO QUAD”
+Disp “X=[H+]=”
+Disp (-B+sqrt(B^2-4*1*-C*B))/2
+Disp “PH IS THE N”
+Disp -log((-B+sqrt(B^2-4*1*-C*B))/2)
+ 
+Repeat getKey
+End
+ 
+Input “V ACID=”,D
+Input “M BASE=”,E
+ 
+Disp “BASE RQRD”
+(D*C/E)->F
+Disp F
+Disp “TOT VOL OF SOL”
+Disp (D+F)
+Disp “[HA]=”
+(C*D)/(D+F)->H
+Disp H
+ 
+Disp “KB”
+(10^-14)/B->G
+Disp G
+Repeat getKey
+End
+Disp “HA+OH-=H2O+A-”
+Disp “ICE BOX”
+ 
+Repeat getKey
+End
+ 
+While 0=0 //Forever
+ 
+Input “V BASE=”,J
+Disp “MOL OH”
+Disp (J*E)
+Disp “MOL HA”
+Disp (C*D)
+Disp “HA+OH-=H2O+A-”
+Disp “ICE TABLE”
+ 
+Repeat getKey
+End
+ 
+If (C*D)>(J*E)
+Then
+ 
+Disp “[A-]=”
+(J*E)/(J+D)->K
+Disp K
+ 
+Disp “[HA]”
+(C*D-J*E)/(J+D)->L
+Disp L
+ 
+Repeat getKey
+End
+ 
+Disp “HEND HASSLE”
+Disp “PKA”
+Disp -log(B)
+Disp “PH”
+Disp -log(B)+log(K/L)
+ 
+Else
+ 
+If (C*D)=(J*E)
+Then
+Disp “THIS EQUIV PT”
+ 
+Else
+ 
+Disp “MOL EX OH”
+ 
+(J*E)-(C*D)->M
+Disp M
+Disp “SO [OH-]”
+ 
+Repeat getKey
+End
+M/(J+D)->N
+ 
+Disp N
+Disp “AND POH”
+Disp -log(N)
+ 
+Disp “SO PH IS” 
+Disp 14--log(N)
+End
+End
+End
+ 
+Else
+
+ 
+Disp “WK BASE TITRATED”
+Disp “W/ STR ACID”
+Input “KB=”,B
+Input “M BASE=”,C
+
+Disp "INIT PH OF SYS"
+Disp "DO ICE TABLE"
+Disp "DO QUAD"
+Disp "X=[OH-]="
+Disp (-B+sqrt(B^2-4*1*-C*B))
+Disp "POH IS THEN"
+Disp -log((-B+sqrt(B^2-4*1*-C*B))/2)
+
+Repeat getKey
+End
+
+Input "V BASE=",D
+Input "M ACID=",E
+
+Disp "ACID RQRD"
+(D*C)/E->F
+Disp F
+Disp "TOT VOL OF SOL"
+Disp (D+F)
+Disp "[A-]="
+(C*D)/(D+F)->H
+Disp H
+Disp "KA"
+(10^-14)/B->G
+Disp G
+Repeat getKey
+End
+
+Disp "HA+OH-=H20+A-"
+Disp "ICE BOX"
+
+Repeat getKey
+End
+
+While 0=0
+
+Input "V ACID=",J
+Disp "MOL H+"
+Disp (J*E)
+Disp "MOL A-"
+Disp (C*D)
+Disp "HA+OH-=H2O+A-"
+Disp "ICE TABLE"
+
+Repeat getKey
+End
+
+If (C*D)>(J*E)
+Then
+
+Disp "[HA]"
+(J*E)/(J+D)->K
+Disp K
+
+Disp "[A-]"
+(C*D-J*E)/(J+D)->L
+Disp L
+
+Repeat getKey 
+End
+
+Disp "HEND HASSLE"
+Disp "PKB"
+Disp -log(B)
+Disp "POH"
+Disp -log(B)+log(K/L)
+Else
+If (C*D)=(J*E)
+Then
+Disp "THIS EQUIV PT"
+
+Else
+
+Disp "MOLE EX H+"
+(J*E)-(C*D)->M
+Disp M
+Repeat getKey
+End
+M/(J+D)->N
+Disp N
+Disp "AND PH"
+Disp -log(N)
+
+Disp "SO POH IS"
+
+Disp 14--log(N)
+
+End
+End
+End
