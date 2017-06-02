@@ -1,0 +1,12 @@
+3D Point Distance Solver (self explanatory)
+
+Input "Point 1 X",A
+Input "Point 1 Y",B
+Input "Point 1 Z",C
+
+Input "Point 2 X",D
+Input "Point 2 Y",E
+Input "Point 2 Z",F
+
+Disp "Distance is"
+Disp sqrt((A-D)^2+(B-E)^2+(C-F)^2)

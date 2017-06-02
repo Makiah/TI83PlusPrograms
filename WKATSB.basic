@@ -1,3 +1,5 @@
+Used to titrate a given weak acid or base provided its Ka, the volume of weak base, etc.  
+
 Disp “TITRATE WK A/B”
 Disp “PRS 0 FOR WK A”
 Disp “PRS 1 FOR WK B”
